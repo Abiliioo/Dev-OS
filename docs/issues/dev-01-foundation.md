@@ -24,7 +24,8 @@ Criar a fundacao documental independente do Abiliio Dev OS, sem instalar ferrame
 - Branch `feature/dev-01-foundation` criada e publicada.
 - Baseline inicial registrado: `65a5264 docs: add dev os foundation`.
 - Foundation revisada e homologada.
-- Issue #1 deve permanecer aberta ate o merge do Pull Request final da DEV-01.
+- PR #2 mergeado em `main`.
+- Issue #1 fechada como completed.
 
 ## Escopo
 
@@ -63,7 +64,7 @@ Criar a fundacao documental independente do Abiliio Dev OS, sem instalar ferrame
 - [x] Prompts iniciais criados.
 - [x] Papeis de agentes criados.
 - [x] Entrega apresentada para homologacao antes do primeiro merge.
-- [ ] Pull Request final da DEV-01 criado, revisado e mergeado.
+- [x] Pull Request final da DEV-01 criado, revisado e mergeado.
 
 ## Riscos
 
@@ -73,5 +74,4 @@ Criar a fundacao documental independente do Abiliio Dev OS, sem instalar ferrame
 
 ## Dependencias
 
-- Pull Request final da DEV-01.
-- Review e merge do Pull Request final para fechamento automatico ou manual da Issue #1.
+Nenhuma pendencia ativa. DEV-01 concluida.

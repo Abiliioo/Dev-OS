@@ -10,6 +10,8 @@ assignees: ""
 
 ## Problema
 
+## Referencias ou restricoes
+
 ## Objetivo
 
 ## Escopo
@@ -23,4 +25,3 @@ assignees: ""
 ## Riscos
 
 ## Dependencias
-

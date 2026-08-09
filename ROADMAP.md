@@ -2,7 +2,7 @@
 
 ## DEV-01 - Foundation
 
-Status: homologada, aguardando Pull Request final e merge.
+Status: concluida.
 
 Objetivo: criar o repositorio e a arquitetura documental.
 
@@ -26,6 +26,8 @@ Fora de escopo:
 - infraestrutura de producao.
 
 ## DEV-02 - GitHub Flow
+
+Status: em implementacao.
 
 - Issue templates.
 - PR template.

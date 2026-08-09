@@ -10,6 +10,8 @@ assignees: ""
 
 ## Problema ou oportunidade
 
+## Impacto esperado
+
 ## Objetivo
 
 ## Escopo
@@ -23,4 +25,3 @@ assignees: ""
 ## Riscos
 
 ## Dependencias
-
