@@ -4,6 +4,10 @@
 
 O Abiliio Dev OS sera a fonte central de governanca, workflow, qualidade, arquitetura, IA e documentacao para projetos Abiliio.
 
+Esta DEV-01 foi o bootstrap inicial do proprio Dev OS. A partir da DEV-02, o fluxo completo `Issue -> Planejamento -> Branch -> Implementacao -> QA -> PR -> Review -> Merge` passa a ser obrigatorio para mudancas relevantes.
+
+Issue oficial no GitHub: #1 - [Nova funcao] DEV-01 - Foundation do Abiliio Dev OS.
+
 ## Problema
 
 As mesmas instrucoes de desenvolvimento sao repetidas em varios projetos, gerando retrabalho, inconsistencia e perda de contexto.
@@ -11,6 +15,16 @@ As mesmas instrucoes de desenvolvimento sao repetidas em varios projetos, gerand
 ## Objetivo
 
 Criar a fundacao documental independente do Abiliio Dev OS, sem instalar ferramentas ou montar CI/CD complexo nesta etapa.
+
+## Estado real
+
+- Repositorio GitHub criado em `Abiliioo/Dev-OS`.
+- Branch padrao do GitHub definida como `main`.
+- Issue oficial #1 criada manualmente no GitHub.
+- Branch `feature/dev-01-foundation` criada e publicada.
+- Baseline inicial registrado: `65a5264 docs: add dev os foundation`.
+- Foundation revisada e homologada.
+- Issue #1 deve permanecer aberta ate o merge do Pull Request final da DEV-01.
 
 ## Escopo
 
@@ -37,14 +51,19 @@ Criar a fundacao documental independente do Abiliio Dev OS, sem instalar ferrame
 
 ## Criterios de aceite
 
-- [ ] Repositorio local criado.
-- [ ] Branch `feature/dev-01-foundation` criada.
-- [ ] Arquitetura documental inicial criada.
-- [ ] Documentos raiz criados.
-- [ ] Templates iniciais criados.
-- [ ] Prompts iniciais criados.
-- [ ] Papeis de agentes criados.
-- [ ] Entrega apresentada para homologacao antes do primeiro merge.
+- [x] Repositorio local criado.
+- [x] Repositorio GitHub criado em `Abiliioo/Dev-OS`.
+- [x] Branch padrao definida como `main`.
+- [x] Issue oficial #1 criada no GitHub.
+- [x] Branch `feature/dev-01-foundation` criada e publicada.
+- [x] Baseline `65a5264 docs: add dev os foundation` registrado.
+- [x] Arquitetura documental inicial criada.
+- [x] Documentos raiz criados.
+- [x] Templates iniciais criados.
+- [x] Prompts iniciais criados.
+- [x] Papeis de agentes criados.
+- [x] Entrega apresentada para homologacao antes do primeiro merge.
+- [ ] Pull Request final da DEV-01 criado, revisado e mergeado.
 
 ## Riscos
 
@@ -54,6 +73,5 @@ Criar a fundacao documental independente do Abiliio Dev OS, sem instalar ferrame
 
 ## Dependencias
 
-- Criacao/publicacao do repositorio GitHub `abiliio-dev-os`.
-- Criacao da Issue correspondente no GitHub apos o remoto existir.
-
+- Pull Request final da DEV-01.
+- Review e merge do Pull Request final para fechamento automatico ou manual da Issue #1.

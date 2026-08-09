@@ -2,6 +2,8 @@
 
 ## DEV-01 - Foundation
 
+Status: homologada, aguardando Pull Request final e merge.
+
 Objetivo: criar o repositorio e a arquitetura documental.
 
 Entregas:
@@ -62,4 +64,3 @@ Pilotos:
 - OmniRoute.
 
 Nenhum experimento deve virar padrao global sem benchmark e plano de remocao.
-
