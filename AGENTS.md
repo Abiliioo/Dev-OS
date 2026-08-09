@@ -6,6 +6,8 @@ Todas as respostas, comentarios de progresso, relatorios e documentos devem ser 
 
 ## Workflow padrao
 
+O fluxo canonico esta em `docs/github-flow.md`.
+
 1. Issue.
 2. Planejamento.
 3. Branch dedicada.
@@ -57,4 +59,3 @@ Uma entrega esta pronta para homologacao quando:
 - documentos afetados foram atualizados;
 - validacoes proporcionais foram executadas;
 - riscos e proximos passos foram registrados.
-

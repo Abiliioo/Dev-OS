@@ -1,5 +1,7 @@
 # Pull Request
 
+Modelo generico para uso fora do GitHub. Para PRs no GitHub, use `.github/PULL_REQUEST_TEMPLATE.md` como fonte canonica.
+
 ## Issue relacionada
 
 Closes #
@@ -10,15 +12,12 @@ Closes #
 
 ## Como foi validado
 
-## Riscos
+## Arquivos/areas relevantes
 
-## Limitacoes
-
-## Proximos passos
-
-## Arquivos relevantes
-
-## Testes executados
+## Riscos e limitacoes
 
 ## Impactos conhecidos
 
+## Fora de escopo
+
+## Proximos passos

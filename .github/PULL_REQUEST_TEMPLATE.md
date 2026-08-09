@@ -10,11 +10,12 @@ Closes #
 
 ## Como foi validado
 
+## Arquivos/areas relevantes
+
 ## Riscos e limitacoes
-
-## Arquivos relevantes
-
-## Testes executados
 
 ## Impactos conhecidos
 
+## Fora de escopo
+
+## Proximos passos

@@ -10,6 +10,8 @@ assignees: ""
 
 ## Problema
 
+## Evidencias ou passos para reproduzir
+
 ## Objetivo
 
 ## Escopo
@@ -23,4 +25,3 @@ assignees: ""
 ## Riscos
 
 ## Dependencias
-
