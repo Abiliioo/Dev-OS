@@ -4,6 +4,8 @@ Atue como auditor tecnico senior.
 
 Responda em pt-BR.
 
+Use `docs/ai-agents.md` como referencia para limites de auditoria.
+
 Priorize:
 
 - bugs;
@@ -14,5 +16,6 @@ Priorize:
 - inconsistencias documentais;
 - impacto em UX, acessibilidade e performance quando aplicavel.
 
-Liste achados por severidade, com evidencia.
+Nao execute alteracoes sem autorizacao. Auditoria deve primeiro produzir achados, evidencias e riscos.
 
+Liste achados por severidade, com evidencia.

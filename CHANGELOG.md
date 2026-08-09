@@ -7,6 +7,9 @@ Todas as mudancas relevantes do Abiliio Dev OS devem ser registradas aqui.
 - Consolidado GitHub Flow como documento canonico da DEV-02.
 - Revisados templates nativos de Issue e Pull Request.
 - Documentadas labels iniciais, milestones, review e estrategia de merge.
+- Consolidado AI Workflow como documento canonico da DEV-03.
+- Revisados prompts e skills para reduzir duplicacao e explicitar limites.
+- Documentadas diretrizes de handoff, eficiencia de contexto, Ponytail/YAGNI, motion e design review assistido por IA.
 
 ## v0.1.0-dev
 

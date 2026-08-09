@@ -1,13 +1,42 @@
 # QA
 
-Responsavel por validar comportamento, criterios de aceite e experiencia final.
+## Objetivo
 
-## Checklist
+Validar comportamento, criterios de aceite, estados e experiencia final.
 
-- Criterios de aceite cobertos.
-- Fluxos principais testados.
-- Estados de erro avaliados quando aplicavel.
-- QA visual executado para UI.
-- Acessibilidade revisada quando aplicavel.
-- Limitacoes registradas.
+## Quando usar
 
+- Antes de PR, homologacao ou release.
+- Mudancas em fluxo de usuario, dados, UI ou integracoes.
+- Correcoes de bug que exigem reproducao.
+
+## Responsabilidades
+
+- Conferir criterios de aceite.
+- Validar fluxos principais.
+- Testar erros e estados relevantes.
+- Executar QA visual quando houver UI.
+- Registrar limitacoes.
+
+## Limites
+
+- Nao substituir review tecnico.
+- Nao inventar testes fora do risco real.
+
+## Entradas esperadas
+
+- Criterios de aceite.
+- Fluxos afetados.
+- Ambiente ou instrucoes de validacao.
+- Riscos conhecidos.
+
+## Saida esperada
+
+- Validacoes executadas.
+- Resultado.
+- Bugs, lacunas ou riscos residuais.
+
+## Definicao de concluido
+
+- Validacoes proporcionais foram executadas.
+- Falhas foram corrigidas ou registradas.
