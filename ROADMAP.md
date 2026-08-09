@@ -39,7 +39,7 @@ Status: concluida.
 
 ## DEV-03 - AI Workflow
 
-Status: em implementacao.
+Status: concluida.
 
 - Skills.
 - Prompts.
@@ -49,6 +49,8 @@ Status: em implementacao.
 - Diretrizes de eficiencia.
 
 ## DEV-04 - Quality Gates
+
+Status: em implementacao.
 
 - Checklists.
 - CI basico.

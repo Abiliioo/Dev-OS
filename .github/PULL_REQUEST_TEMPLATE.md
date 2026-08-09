@@ -10,9 +10,13 @@ Closes #
 
 ## Como foi validado
 
+Inclua evidencias reais ou declare o que nao se aplica.
+
 ## Arquivos/areas relevantes
 
 ## Riscos e limitacoes
+
+Inclua excecoes de Quality Gates quando houver.
 
 ## Impactos conhecidos
 

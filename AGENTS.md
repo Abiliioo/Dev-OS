@@ -10,6 +10,7 @@ Fluxos canonicos:
 
 - GitHub Flow: `docs/github-flow.md`.
 - AI Workflow: `docs/ai-agents.md`.
+- Quality Gates: `docs/quality.md`.
 
 1. Issue.
 2. Planejamento.
