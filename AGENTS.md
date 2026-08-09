@@ -6,7 +6,10 @@ Todas as respostas, comentarios de progresso, relatorios e documentos devem ser 
 
 ## Workflow padrao
 
-O fluxo canonico esta em `docs/github-flow.md`.
+Fluxos canonicos:
+
+- GitHub Flow: `docs/github-flow.md`.
+- AI Workflow: `docs/ai-agents.md`.
 
 1. Issue.
 2. Planejamento.

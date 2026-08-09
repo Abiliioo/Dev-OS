@@ -27,7 +27,7 @@ Fora de escopo:
 
 ## DEV-02 - GitHub Flow
 
-Status: em implementacao.
+Status: concluida.
 
 - Issue templates.
 - PR template.
@@ -38,6 +38,8 @@ Status: em implementacao.
 - Processo de review.
 
 ## DEV-03 - AI Workflow
+
+Status: em implementacao.
 
 - Skills.
 - Prompts.

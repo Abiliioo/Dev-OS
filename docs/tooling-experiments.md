@@ -8,7 +8,14 @@ Repositorio: https://github.com/dietrichgebert/ponytail
 
 Objetivo: forcar raciocinio YAGNI antes de criar codigo novo.
 
-Avaliar inicialmente em modo moderado/lite.
+Decisao DEV-03:
+
+- adotar conceitualmente a escada YAGNI/reuse/native/minimum no AI Workflow;
+- manter Ponytail como candidato a piloto controlado futuro;
+- nao instalar globalmente nesta sprint;
+- nao adicionar hooks;
+- nao copiar integralmente o ruleset externo;
+- nao recomendar modo `ultra` como padrao.
 
 ## RTK
 
@@ -41,4 +48,3 @@ Repositorio: https://github.com/diegosouzapw/OmniRoute.git
 Ferramenta experimental para roteamento, fallback, compressao e multiplos providers.
 
 Nao colocar no caminho critico agora.
-

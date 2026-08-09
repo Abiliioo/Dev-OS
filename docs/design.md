@@ -13,7 +13,7 @@ Design deve servir ao uso real, nao apenas a aparencia.
 
 ## Review de UI
 
-Antes de concluir trabalhos relevantes de UI, revise:
+Antes de concluir trabalhos relevantes de UI, revise de forma proporcional:
 
 - parece brusco?
 - parece travado?
@@ -25,6 +25,8 @@ Antes de concluir trabalhos relevantes de UI, revise:
 - existe acessibilidade?
 - existe excesso de animacao?
 - existe falta de resposta?
+- existe ausencia de motion onde a mudanca de estado fica brusca?
+- existem padroes genericos ou repetitivos sem funcao?
+- existe problema real de acabamento?
 
-Corrija apenas problemas reais.
-
+Corrija apenas problemas reais. Nao exija Design Review para projeto sem UI relevante.

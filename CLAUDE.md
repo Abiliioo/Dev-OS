@@ -10,6 +10,7 @@ Este repositorio e o Abiliio Dev OS, a fonte central de governanca de desenvolvi
 
 ## Modo de trabalho
 
+- Use `docs/ai-agents.md` como referencia canonica para AI Workflow.
 - Priorize simplicidade, clareza e evidencia.
 - Evite overengineering e abstracoes prematuras.
 - Antes de sugerir ferramenta, identifique o problema real.
@@ -29,4 +30,3 @@ Claude pode ser usado com maior frequencia para:
 - investigacao.
 
 Isso nao e uma limitacao absoluta. Use o melhor agente para cada contexto.
-
