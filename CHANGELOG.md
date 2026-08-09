@@ -10,6 +10,9 @@ Todas as mudancas relevantes do Abiliio Dev OS devem ser registradas aqui.
 - Consolidado AI Workflow como documento canonico da DEV-03.
 - Revisados prompts e skills para reduzir duplicacao e explicitar limites.
 - Documentadas diretrizes de handoff, eficiencia de contexto, Ponytail/YAGNI, motion e design review assistido por IA.
+- Consolidado Quality Gates como documento canonico da DEV-04.
+- Documentados gates por risco, tipo de projeto, excecoes, evidencias e Definition of Done.
+- Adicionado CI basico para validar `git diff --check` no diff real de Pull Requests para `main`.
 
 ## v0.1.0-dev
 
