@@ -62,7 +62,7 @@ Status: concluida.
 
 ## DEV-05 - Tooling Experiments
 
-Status: em andamento.
+Status: concluida.
 
 Pilotos:
 
@@ -72,3 +72,9 @@ Pilotos:
 - OmniRoute.
 
 Nenhum experimento deve virar padrao global sem benchmark e plano de remocao.
+
+## Closeout do roadmap inicial
+
+DEV-01 a DEV-05 formam a baseline inicial do Abiliio Dev OS.
+
+O roadmap inicial esta concluido. Fases futuras devem ser definidas com base em necessidade e evidencia real.
