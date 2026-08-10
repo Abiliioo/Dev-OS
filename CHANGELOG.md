@@ -13,6 +13,10 @@ Todas as mudancas relevantes do Abiliio Dev OS devem ser registradas aqui.
 - Consolidado Quality Gates como documento canonico da DEV-04.
 - Documentados gates por risco, tipo de projeto, excecoes, evidencias e Definition of Done.
 - Adicionado CI basico para validar `git diff --check` no diff real de Pull Requests para `main`.
+- Consolidado protocolo de Tooling Experiments da DEV-05 Fase 1.
+- Registrado baseline inicial para piloto RTK sem instalar ferramentas.
+- Registrados resultados do piloto RTK isolado da DEV-05 Fase 2.
+- Registradas auditorias pre-instalacao de Graphify, Caveman e OmniRoute na DEV-05 Fase 3.
 
 ## v0.1.0-dev
 
