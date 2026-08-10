@@ -50,7 +50,7 @@ Status: concluida.
 
 ## DEV-04 - Quality Gates
 
-Status: em implementacao.
+Status: concluida.
 
 - Checklists.
 - CI basico.
@@ -61,6 +61,8 @@ Status: em implementacao.
 - Performance budgets.
 
 ## DEV-05 - Tooling Experiments
+
+Status: em andamento.
 
 Pilotos:
 
