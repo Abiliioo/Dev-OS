@@ -275,12 +275,42 @@ Problema alvo:
 
 criar knowledge graph local de codigo, documentacao, configs, dependencias e arquitetura.
 
-Status Fase 1:
+Status:
 
-- nao instalado;
-- nao benchmarkado;
-- futuro piloto deve avaliar repositorios grandes e perguntas multi-hop;
-- nao adotar se busca/leitura normal resolver com menor custo.
+- auditoria pre-instalacao concluida na Fase 3;
+- piloto nao executado;
+- decisao: CANDIDATO A PILOTO FUTURO.
+
+Ficha pre-instalacao:
+
+- origem/projeto: `Graphify-Labs/graphify`, GitHub publico;
+- documentacao primaria revisada: README, pagina de releases e instrucoes oficiais do repositorio;
+- versao/release estavel atual identificavel: `v0.9.24`;
+- licenca atual confirmada: Apache-2.0 e MIT;
+- plataforma/sistema: Python 3.10+;
+- Windows: documentacao inclui instalacao via `uv`/`pipx` e observacao especifica para PowerShell;
+- Codex: documentacao menciona instalacao de skill para Codex via `graphify install --platform codex`;
+- instalacao documentada: `uv tool install graphifyy` ou `pipx install graphifyy`;
+- executaveis/servicos: comando `graphify`; nenhum servico persistente exigido para o uso basico documentado;
+- dependencias: Python 3.10+, `uv` ou `pipx`; parsing local baseado em Tree-sitter AST;
+- arquivos/configs criados: saidas como `graphify-out/graph.html`, `GRAPH_REPORT.md` e `graph.json`; instalacao de skill pode criar arquivos em `.claude/skills/graphify/` ou `.agents/skills/graphify/`;
+- PATH: instalacao via gerenciador de ferramenta pode exigir diretorio de scripts no PATH;
+- hooks: documentacao menciona instalacao de hook e modo estrito opcional por `GRAPHIFY_HOOK_STRICT`;
+- rede: codigo e parse estrutural sao documentados como locais; passagem semantica para docs/PDF/imagens/video pode usar modelo assistente ou API key configurada;
+- telemetria: nenhuma telemetria obrigatoria identificada nas fontes revisadas;
+- secrets/API keys: podem ser necessarias se a passagem semantica usar provedor/modelo externo;
+- cache/index/db: grafo e relatorios gerados no projeto; nao foi identificado banco persistente obrigatorio para o uso basico;
+- configuracao global/projeto: pode instalar skill por projeto e criar arquivos de apoio; tambem pode criar hooks conforme opcao escolhida;
+- desativar/remover: remover pacote/ferramenta instalada, saidas `graphify-out/`, `GRAPH_REPORT.md`, `graph.json`, skills/configuracoes criadas e hooks se instalados;
+- rollback: deve ser testado em piloto isolado, sem PATH global e com geracao em diretorio temporario ou repo descartavel;
+- risco: superficie moderada por criacao de artefatos, possiveis hooks e uso opcional de API/modelo para conteudo semantico;
+- cenario que justificaria piloto: repositorio maior, com perguntas multi-hop sobre arquitetura, dependencias e documentacao que `rg`, leitura direta e inventario Git nao respondam com bom custo;
+- cenario que nao justificaria piloto: repositorio pequeno/documental em que busca textual e leitura normal ja preservem contexto suficiente;
+- pendencias: confirmar exatamente quais arquivos sao criados no modo Codex, testar rollback e medir valor em repositorio read-only representativo.
+
+Observacao:
+
+Capacidade documentada de gerar grafo nao e, por si so, beneficio comprovado para o Dev OS. Um piloto futuro deve ser read-only, isolado e orientado por perguntas reais que hoje custem caro responder.
 
 ## Caveman
 
@@ -290,12 +320,42 @@ Problema alvo:
 
 reduzir verbosidade de respostas.
 
-Status Fase 1:
+Status:
 
-- nao instalado;
-- nao benchmarkado;
-- futuro piloto deve avaliar clareza, completude, pt-BR, handoff e recuperacao de erro;
-- resposta menor nao e automaticamente melhor.
+- auditoria pre-instalacao concluida na Fase 3;
+- piloto nao executado;
+- decisao: SEM JUSTIFICATIVA DE PILOTO AGORA.
+
+Ficha pre-instalacao:
+
+- origem/projeto: `JuliusBrussee/caveman`, GitHub publico;
+- documentacao primaria revisada: README, INSTALL, releases e instrucoes oficiais do repositorio;
+- versao/release estavel atual identificavel: `v1.8.2`;
+- licenca atual confirmada: MIT;
+- plataforma/sistema: JavaScript/Node.js, scripts shell e PowerShell, skill/prompt para multiplos agentes;
+- Windows: documentacao inclui instalacao por PowerShell e fallback manual;
+- Codex: documentacao menciona suporte a Codex e instalacao por `npx skills add JuliusBrussee/caveman -a codex`;
+- instalacao documentada: one-liner shell/PowerShell, `npx skills add`, clone local com `node bin/install.js` e flags de escopo;
+- executaveis/servicos: nao exige servico persistente; usa scripts, skills, hooks/statusline conforme alvo;
+- dependencias: Node.js/npm/npx e CLIs dos agentes envolvidos, conforme metodo;
+- arquivos/configs criados: pode escrever em configuracoes de agentes, hooks, plugins, skills e, com `--with-init`, arquivos de regra como `AGENTS.md`, `.github/copilot-instructions.md`, `.opencode/AGENTS.md` e outros;
+- PATH: nao ha requisito central de PATH para o uso como skill, mas instaladores e CLIs auxiliares dependem do ambiente Node/agente;
+- hooks: documentacao inclui instalacao/remocao de hooks e ajustes recentes para chave canonica `hooks` no Codex;
+- rede: instalacao pode acessar GitHub, npm/skills CLI e registries; documentacao afirma que o instalador nao faz phone home proprio;
+- telemetria: nenhuma telemetria propria obrigatoria identificada; efeitos indiretos dependem dos agentes/CLIs usados;
+- secrets/API keys: nao requer secrets para a funcao declarada;
+- cache/index/db: nao identificado banco proprio; pode criar flags/arquivos de estado e artefatos de skill/hook;
+- configuracao global/projeto: alta superficie, pois pode alterar configuracoes globais de agentes e arquivos de projeto dependendo das flags;
+- desativar/remover: `--uninstall` remove parte dos hooks/plugins/flags, mas a documentacao informa que skills instaladas via `npx skills add` e regras por repositorio criadas por `--with-init` podem exigir remocao manual;
+- rollback: exigiria snapshot previo dos arquivos de agente/projeto e validacao manual de remocao;
+- risco: alto para o Dev OS agora, por alterar comportamento de comunicacao, possivelmente afetar pt-BR, handoff, clareza, diagnostico de erro e regras locais;
+- cenario que justificaria piloto: somente se houver dor mensuravel de excesso de resposta que nao possa ser resolvida por prompts/regras locais e se o piloto proteger completude, pt-BR e recuperacao de erro;
+- cenario que nao justificaria piloto: estado atual do Dev OS, em que a qualidade depende de relatorios claros, evidencias completas e preservacao de contexto;
+- pendencias: se reconsiderado, definir metricas de clareza/completude antes de instalar e testar em ambiente descartavel.
+
+Observacao:
+
+Resposta menor nao e automaticamente melhor. Para o Dev OS, reduzir output so teria valor se mantivesse precisao, rastreabilidade, pt-BR e capacidade de diagnostico.
 
 ## OmniRoute
 
@@ -305,10 +365,65 @@ Problema alvo:
 
 roteamento, fallback, compressao e multiplos providers.
 
-Status Fase 1:
+Status:
 
-- nao instalado;
-- nao benchmarkado;
-- testar somente depois de experimentos de menor superficie;
-- nao migrar configuracao principal do Dev OS durante piloto;
-- nao armazenar secrets no repositorio.
+- auditoria pre-instalacao concluida na Fase 3;
+- piloto nao executado;
+- decisao: SEM JUSTIFICATIVA DE PILOTO AGORA.
+
+Ficha pre-instalacao:
+
+- origem/projeto: `diegosouzapw/OmniRoute`, GitHub publico;
+- documentacao primaria revisada: README, QUICK-START e pagina de releases oficiais;
+- versao/release estavel atual identificavel: `v3.8.2`;
+- licenca atual confirmada: MIT;
+- plataforma/sistema: Node.js/npm, Docker, desktop Electron e execucao por codigo-fonte;
+- Windows: suportado por instalacao npm/global, Docker ou aplicativo desktop conforme documentacao;
+- Codex: README menciona compatibilidade com Codex e gateway OpenAI-compatible;
+- instalacao documentada: `npm install -g omniroute`, Docker, desktop Electron ou source;
+- executaveis/servicos: comando `omniroute`; servidor local/dashboard documentado em `http://localhost:20128`;
+- dependencias: runtime Node/npm ou Docker; provedores externos conforme uso;
+- arquivos/configs criados: configuracoes locais do gateway, conexoes de providers, possiveis dados de dashboard/cache/logs e instalacoes por metodo escolhido;
+- PATH: instalacao global npm normalmente expoe `omniroute` no PATH;
+- hooks: nao identificado hook obrigatorio para uso basico; integracoes com CLIs/agentes podem criar configuracoes especificas;
+- rede: componente central, pois roteia chamadas para provedores/modelos externos;
+- telemetria: README declara zero telemetry by default;
+- secrets/API keys: superficie relevante, pois usa credenciais/API keys de provedores; README declara credenciais criptografadas em repouso com AES-256-GCM;
+- cache/index/db: possivel persistencia local de configuracoes, modelos, historico/analytics e estado do dashboard, conforme uso;
+- configuracao global/projeto: pode alterar fluxo de clientes e agentes para apontar ao gateway local;
+- desativar/remover: parar o processo/servico local, remover pacote/container/app, limpar configuracoes locais, credenciais e apontamentos de clientes;
+- rollback: deve incluir backup e restauracao de configuracoes dos clientes, revogacao/rotacao de API keys usadas e remocao de dados locais;
+- risco: alto para o Dev OS agora, por envolver secrets, rede, gateway local, porta dedicada, roteamento de modelos e mudanca operacional ampla;
+- cenario que justificaria piloto: necessidade real e medida de fallback entre provedores, roteamento por custo/capacidade, compatibilidade multi-provider ou compressao centralizada;
+- cenario que nao justificaria piloto: uso atual sem dor confirmada de roteamento, sem necessidade de multiplos providers e sem politica madura de secrets para gateway local;
+- pendencias: definir threat model, politica de secrets, rollback de clientes, escopo de logs/cache e criterio de sucesso antes de qualquer piloto.
+
+Observacao:
+
+OmniRoute resolve um problema operacional maior que o escopo atual da DEV-05. Sem dor comprovada de roteamento/fallback, o custo de superficie supera o beneficio esperado.
+
+## Estado do catalogo apos Fase 3
+
+| Ferramenta | Estado | Piloto | Decisao |
+| --- | --- | --- | --- |
+| RTK | Piloto isolado concluido | Executado | REJEITAR no contexto atual |
+| Graphify | Auditoria pre-instalacao concluida | Nao executado | CANDIDATO A PILOTO FUTURO |
+| Caveman | Auditoria pre-instalacao concluida | Nao executado | SEM JUSTIFICATIVA DE PILOTO AGORA |
+| OmniRoute | Auditoria pre-instalacao concluida | Nao executado | SEM JUSTIFICATIVA DE PILOTO AGORA |
+
+## Avaliacao de prontidao da DEV-05
+
+DEV-05 esta documentalmente pronta para seguir para Pull Request apos a Fase 3, desde que os Quality Gates locais passem.
+
+Evidencias cobertas:
+
+- protocolo de experimento consolidado;
+- baseline inicial registrado;
+- piloto RTK executado de forma isolada;
+- decisao RTK registrada como REJEITAR no contexto atual;
+- auditorias pre-instalacao de Graphify, Caveman e OmniRoute concluidas;
+- nenhuma ferramenta virou padrao sem evidencia;
+- rollback RTK demonstrado;
+- Graphify, Caveman e OmniRoute permaneceram sem instalacao/piloto.
+
+Nao e necessario pilotar as quatro ferramentas para encerrar a DEV-05, pois a Issue exige ao menos um piloto controlado e as demais ferramentas foram avaliadas por auditoria pre-instalacao.
