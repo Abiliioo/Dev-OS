@@ -15,6 +15,7 @@ Todas as mudancas relevantes do Abiliio Dev OS devem ser registradas aqui.
 - Adicionado CI basico para validar `git diff --check` no diff real de Pull Requests para `main`.
 - Consolidado protocolo de Tooling Experiments da DEV-05 Fase 1.
 - Registrado baseline inicial para piloto RTK sem instalar ferramentas.
+- Registrados resultados do piloto RTK isolado da DEV-05 Fase 2.
 
 ## v0.1.0-dev
 
