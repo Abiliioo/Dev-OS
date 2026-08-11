@@ -30,7 +30,16 @@ Definir, documentar, versionar e evoluir um padrao simples e reutilizavel para p
 
 Versao atual: `v0.1.0-dev`
 
-Esta versao cobre a foundation documental da DEV-01. Ela ainda nao instala ferramentas, nao define CI/CD complexo e nao torna experimentos obrigatorios.
+Esta versao cobre a baseline inicial do Abiliio Dev OS:
+
+- Foundation;
+- GitHub Flow;
+- AI Workflow;
+- Quality Gates;
+- CI basico;
+- Tooling Experiments.
+
+O projeto continua em versao de desenvolvimento. Nenhuma ferramenta experimental foi promovida automaticamente, e fases futuras devem ser definidas depois de avaliacao da baseline e necessidade real.
 
 ## Como adotar em um projeto
 
@@ -46,9 +55,8 @@ Evite copiar centenas de linhas. A referencia ao Dev OS deve ser suficiente, exc
 
 ## Roadmap inicial
 
-1. DEV-01 - Foundation documental.
-2. DEV-02 - GitHub Flow.
-3. DEV-03 - AI Workflow.
-4. DEV-04 - Quality Gates.
-5. DEV-05 - Tooling Experiments.
-
+1. DEV-01 - Foundation documental: concluida.
+2. DEV-02 - GitHub Flow: concluida.
+3. DEV-03 - AI Workflow: concluida.
+4. DEV-04 - Quality Gates: concluida.
+5. DEV-05 - Tooling Experiments: concluida.
