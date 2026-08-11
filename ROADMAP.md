@@ -64,12 +64,12 @@ Status: concluida.
 
 Status: concluida.
 
-Pilotos:
+Resultados:
 
-- RTK.
-- Graphify.
-- Caveman.
-- OmniRoute.
+- RTK: piloto executado; rejeitado no contexto atual.
+- Graphify: auditado; candidato a piloto futuro.
+- Caveman: auditado; sem justificativa de piloto agora.
+- OmniRoute: auditado; sem justificativa de piloto agora.
 
 Nenhum experimento deve virar padrao global sem benchmark e plano de remocao.
 
