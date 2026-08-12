@@ -79,6 +79,18 @@ Codex:
 - execucao repetitiva;
 - validacoes locais.
 
+## Acesso a repositorios privados
+
+Quando ChatGPT participar de review ou homologacao direta via GitHub em um repositorio privado, o repositorio deve estar autorizado na conexao GitHub usada pelo agente.
+
+Valide esse acesso durante o onboarding quando esse modo de trabalho for necessario.
+
+O repositorio deve permanecer privado quando essa for a decisao do projeto. Nao altere sua visibilidade apenas para facilitar acesso de agente.
+
+A ausencia dessa autorizacao nao bloqueia desenvolvimento local, mas limita review e verificacao direta pelo ChatGPT. Nesse caso, declare a limitacao e nao afirme ter verificado diretamente branch, commit, PR, diff ou check remoto.
+
+Nao trate GitHub Connector como requisito universal para projetos onde ChatGPT nao precise de acesso direto ao repositorio.
+
 ## Skills
 
 Skills representam modos de atuacao, nao agentes autonomos obrigatorios.
