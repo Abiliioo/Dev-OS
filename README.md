@@ -26,11 +26,13 @@ Definir, documentar, versionar e evoluir um padrao simples e reutilizavel para p
 - `skills/`: responsabilidades de agentes e perfis de atuacao.
 - `.github/`: templates nativos do GitHub.
 
-## Versao inicial
+## Versao atual
 
-Versao atual: `v0.1.0-dev`
+Versao atual: `v0.1.1-dev`
 
-Esta versao cobre a baseline inicial do Abiliio Dev OS:
+Esta versao continua sendo um checkpoint de desenvolvimento.
+
+A baseline inicial do Abiliio Dev OS permanece composta por:
 
 - Foundation;
 - GitHub Flow;
@@ -39,7 +41,9 @@ Esta versao cobre a baseline inicial do Abiliio Dev OS:
 - CI basico;
 - Tooling Experiments.
 
-O projeto continua em versao de desenvolvimento. Nenhuma ferramenta experimental foi promovida automaticamente, e fases futuras devem ser definidas depois de avaliacao da baseline e necessidade real.
+Este checkpoint incorpora aprendizados retrocompativeis posteriores a baseline: DEV-06 - Consumer Adoption Pilot concluida, adocao minima validada em projeto consumidor real, quality gate minimo validado em repositorio consumidor e regra condicional de acesso do ChatGPT a repositorios privados registrada em `docs/ai-agents.md`.
+
+Nenhuma ferramenta experimental foi promovida automaticamente. Futuras fases continuam condicionadas a necessidade e evidencia real.
 
 ## Como adotar em um projeto
 
@@ -60,3 +64,7 @@ Evite copiar centenas de linhas. A referencia ao Dev OS deve ser suficiente, exc
 3. DEV-03 - AI Workflow: concluida.
 4. DEV-04 - Quality Gates: concluida.
 5. DEV-05 - Tooling Experiments: concluida.
+
+DEV-01 a DEV-05 formam o roadmap inicial. DEV-06 - Consumer Adoption Pilot foi a primeira validacao real dessa baseline em projeto consumidor e esta concluida.
+
+Nenhuma DEV-07 foi iniciada. Proximas evolucoes devem continuar surgindo de necessidade e evidencia real.
