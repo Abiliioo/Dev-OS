@@ -237,4 +237,34 @@ Lazy loading deve ter beneficio real e nao prejudicar LCP ou experiencia inicial
 
 ## Linguagem
 
-Todos os agentes devem responder, relatar progresso e produzir documentos em pt-BR, salvo termos tecnicos, caminhos, slugs, hashes, comandos, codigo e mensagens de commit quando fizer sentido.
+Esta secao e a fonte canonica da politica de idioma dos agentes.
+
+Idioma padrao: portugues do Brasil (pt-BR).
+
+Toda comunicacao humana produzida por agentes deve ser escrita em pt-BR,
+incluindo:
+
+- respostas e relatorios de progresso;
+- documentacao operacional e arquitetural;
+- ADRs;
+- comentarios de codigo, docstrings e comentarios TODO/FIXME;
+- mensagens explicativas em scripts;
+- descricoes de Issues e Pull Requests;
+- comentarios de revisao.
+
+Podem permanecer em ingles quando houver motivo tecnico:
+
+- identificadores de codigo (funcoes, classes, variaveis, arquivos ja
+  consolidados);
+- comandos, parametros e flags;
+- APIs, endpoints, schemas e nomes de campos externos;
+- nomes de bibliotecas, frameworks e tecnologias;
+- mensagens literais exigidas por protocolos ou sistemas externos;
+- caminhos, slugs e hashes;
+- o prefixo de Conventional Commits (`feat:`, `fix:`, `docs:`, etc.) - a
+  descricao apos o prefixo segue pt-BR.
+
+Nao traduza identificadores ou termos tecnicos apenas para cumprir esta
+regra. Nao faca varredura retroativa de codigo existente somente para
+traduzir comentarios; aplique a partir de conteudo novo ou efetivamente
+modificado.
