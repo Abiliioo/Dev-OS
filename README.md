@@ -28,7 +28,7 @@ Definir, documentar, versionar e evoluir um padrao simples e reutilizavel para p
 
 ## Versao atual
 
-Versao atual: `v0.1.1-dev`
+Versao atual: `v0.1.2-dev`
 
 Esta versao continua sendo um checkpoint de desenvolvimento.
 
@@ -41,7 +41,9 @@ A baseline inicial do Abiliio Dev OS permanece composta por:
 - CI basico;
 - Tooling Experiments.
 
-Este checkpoint incorpora aprendizados retrocompativeis posteriores a baseline: DEV-06 - Consumer Adoption Pilot concluida, adocao minima validada em projeto consumidor real, quality gate minimo validado em repositorio consumidor e regra condicional de acesso do ChatGPT a repositorios privados registrada em `docs/ai-agents.md`.
+O checkpoint `v0.1.1-dev` incorporou aprendizados retrocompativeis posteriores a baseline: DEV-06 - Consumer Adoption Pilot concluida, adocao minima validada em projeto consumidor real, quality gate minimo validado em repositorio consumidor e regra condicional de acesso do ChatGPT a repositorios privados registrada em `docs/ai-agents.md`.
+
+Este checkpoint (`v0.1.2-dev`) incorpora, de forma retrocompativel, a politica canonica de idioma: portugues do Brasil (pt-BR) como padrao para toda saida textual e comunicacao intermediaria produzida por agentes, incluindo comentarios de codigo, documentacao, ADRs, Issues, Pull Requests e comunicacao durante a propria execucao de uma tarefa (`docs/ai-agents.md`, secao Linguagem).
 
 Nenhuma ferramenta experimental foi promovida automaticamente. Futuras fases continuam condicionadas a necessidade e evidencia real.
 
