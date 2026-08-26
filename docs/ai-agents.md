@@ -241,8 +241,17 @@ Esta secao e a fonte canonica da politica de idioma dos agentes.
 
 Idioma padrao: portugues do Brasil (pt-BR).
 
-Toda comunicacao humana produzida por agentes deve ser escrita em pt-BR,
-incluindo:
+A regra cobre toda saida textual e comunicacao intermediaria produzida
+pelo agente, nao apenas artefatos finais de documentacao. Isso inclui,
+durante a propria execucao de uma tarefa:
+
+- mensagens intermediarias, status e titulos de etapa;
+- comentarios sobre o que esta sendo feito e por que;
+- explicacoes antes e depois de chamadas de ferramenta;
+- resumos de resultado, avisos, decisoes e analises;
+- explicacoes de mensagens de erro produzidas por ferramentas externas.
+
+Tambem inclui os artefatos finais:
 
 - respostas e relatorios de progresso;
 - documentacao operacional e arquitetural;
@@ -251,6 +260,10 @@ incluindo:
 - mensagens explicativas em scripts;
 - descricoes de Issues e Pull Requests;
 - comentarios de revisao.
+
+Quando uma ferramenta externa retornar uma mensagem em ingles, a
+explicacao do agente sobre essa mensagem deve ser em pt-BR; a mensagem
+literal da ferramenta pode ser citada como esta.
 
 Podem permanecer em ingles quando houver motivo tecnico:
 

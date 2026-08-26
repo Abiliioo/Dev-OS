@@ -18,6 +18,7 @@ Todas as mudancas relevantes do Abiliio Dev OS devem ser registradas aqui.
 - Registrados resultados do piloto RTK isolado da DEV-05 Fase 2.
 - Registradas auditorias pre-instalacao de Graphify, Caveman e OmniRoute na DEV-05 Fase 3.
 - Definida politica canonica de idioma (pt-BR) para comunicacao humana produzida por agentes, incluindo comentarios de codigo, documentacao, Issues e Pull Requests (`docs/ai-agents.md`).
+- Reforcada a politica de idioma para deixar explicito que ela cobre toda saida textual e comunicacao intermediaria do agente durante a execucao, nao apenas artefatos finais de documentacao (`docs/ai-agents.md`).
 
 ## v0.1.0-dev
 
