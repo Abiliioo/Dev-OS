@@ -1,8 +1,10 @@
 # CLAUDE.md
 
-Responda, comente o status, relate o progresso, comente codigo e produza
-todos os documentos exclusivamente em portugues do Brasil (pt-BR).
-Politica canonica completa em `docs/ai-agents.md` (secao Linguagem).
+Toda saida textual e comunicacao intermediaria produzida pelo agente -
+respostas, status durante a execucao, comentarios sobre acoes, comentarios
+de codigo e todos os documentos - deve ser escrita exclusivamente em
+portugues do Brasil (pt-BR). Politica canonica completa em
+`docs/ai-agents.md` (secao Linguagem).
 
 Termos tecnicos, nomes de arquivos, comandos, caminhos, slugs, hashes e mensagens de commit podem permanecer em ingles quando fizer sentido.
 
