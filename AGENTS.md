@@ -2,7 +2,12 @@
 
 Este repositorio segue o Abiliio Dev OS.
 
-Todas as respostas, comentarios de progresso, relatorios e documentos devem ser produzidos em portugues do Brasil (pt-BR), exceto comandos, paths, slugs, hashes, nomes tecnicos e mensagens de commit quando fizer sentido manter em ingles.
+Idioma padrao: portugues do Brasil (pt-BR) para toda comunicacao humana
+produzida por agentes, incluindo comentarios de codigo, documentacao,
+relatorios, Issues e Pull Requests. Politica canonica completa em
+`docs/ai-agents.md` (secao Linguagem). Comandos, paths, slugs, hashes,
+nomes tecnicos e mensagens de commit podem permanecer em ingles quando
+fizer sentido.
 
 ## Workflow padrao
 
