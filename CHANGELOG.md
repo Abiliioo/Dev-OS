@@ -18,6 +18,15 @@ Todas as mudancas relevantes do Abiliio Dev OS devem ser registradas aqui.
 - Registrados resultados do piloto RTK isolado da DEV-05 Fase 2.
 - Registradas auditorias pre-instalacao de Graphify, Caveman e OmniRoute na DEV-05 Fase 3.
 
+## v0.1.3-dev
+
+- Incorporada ao AI Workflow a politica canonica "Economize contexto sem economizar validacao".
+- Centralizados papeis de modelo, mapeamento Claude, esforco e fallback em `docs/ai-agents.md`.
+- Formalizadas delegacao proporcional, contrato de subagentes, paralelismo por dependencia e relatorios compactos.
+- Formalizados read-report-first, delta-first review, reutilizacao de fatos comprovados, contexto incremental, tratamento de logs e Git como contexto.
+- Documentados overrides explicitos, adocao de projetos novos e migracao nao destrutiva de projetos existentes.
+- Mantidos `AGENTS.md` agnostico e `CLAUDE.md` como especializacao compacta, ambos apontando para a fonte canonica.
+
 ## v0.1.2-dev
 
 - Definida politica canonica de idioma (pt-BR) para comunicacao humana produzida por agentes, incluindo comentarios de codigo, documentacao, Issues e Pull Requests (`docs/ai-agents.md`).

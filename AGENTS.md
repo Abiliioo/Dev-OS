@@ -31,6 +31,17 @@ Fluxos canonicos:
 
 Evite trabalhar diretamente em `main` para mudancas relevantes.
 
+## Eficiencia de contexto
+
+A politica canonica de modelos, agentes, delegacao e contexto esta em
+`docs/ai-agents.md` (secao Eficiencia de modelos, agentes e contexto).
+
+- Economize contexto sem economizar validacao.
+- Reutilize fatos comprovados enquanto o delta nao os invalidar.
+- Delegue apenas quando houver beneficio real.
+- Use diffs, SHAs, trechos e relatorios compactos antes de expandir contexto.
+- Nao reduza seguranca, gates obrigatorios ou qualidade para economizar custo.
+
 ## Branches
 
 Use nomes descritivos:

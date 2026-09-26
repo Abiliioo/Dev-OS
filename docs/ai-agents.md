@@ -165,20 +165,234 @@ Conteudo minimo sugerido:
 
 Nao copie toda a conversa. Nao registre raciocinio interno irrelevante.
 
-## Eficiencia de contexto
+## Eficiencia de modelos, agentes e contexto
 
-Principios:
+Principio central:
 
-- fonte canonica > copia;
-- contexto proporcional a tarefa;
-- leitura seletiva antes de leitura massiva;
-- nao repetir documentacao ja disponivel;
-- logs completos somente quando necessarios;
-- relatorios finais objetivos;
-- referencie arquivos, commits, Issues e PRs quando isso reduzir ambiguidade;
-- nao sacrifique recuperacao de erro, seguranca ou qualidade para economizar tokens.
+> Economize contexto sem economizar validacao.
 
-Nao criar metricas ou benchmarks complexos nesta sprint.
+Evite trabalho repetido, leitura repetida, modelo excessivamente caro,
+delegacao desnecessaria e reconstrucao de contexto sem causa. Essa economia
+nunca justifica:
+
+- pular teste ou gate aplicavel;
+- deixar de validar dado critico;
+- confiar cegamente em resumo;
+- fazer merge ou deploy sem conferir o estado real;
+- inferir codigo que precisa ser lido;
+- reduzir seguranca operacional, recuperacao de erro ou qualidade.
+
+### Roteamento conceitual de modelos
+
+Use tres papeis conceituais:
+
+1. exploracao barata: localizar, inventariar e resumir fatos simples;
+2. execucao padrao: implementar, testar, documentar e operar o fluxo comum;
+3. escalonamento critico: tratar raciocinio dificil, alto risco e review
+   independente quando houver ganho real.
+
+O mapeamento concreto pertence somente a esta secao canonica. Prompts,
+skills, `AGENTS.md` e arquivos especificos de fornecedor devem referenciar
+os papeis, sem repetir a matriz completa. Nao criar roteador automatico ou
+infraestrutura complexa apenas para representar esses tres papeis.
+
+> Se nao existir motivo concreto para escalar, use o modelo de execucao padrao.
+
+### Mapeamento Claude
+
+Para ambientes Claude, o mapeamento atual e:
+
+```text
+CHEAP_RESEARCH_MODEL = Haiku 4.5
+DEFAULT_EXECUTION_MODEL = Sonnet 5
+CRITICAL_REVIEW_MODEL = Opus 5.5
+```
+
+Fable nao faz parte do roteamento padrao atual.
+
+Haiku 4.5 e preferencial para localizar arquivos, testes e simbolos; fazer
+busca textual; mapear commits, Pull Requests e Issues; inventariar
+dependencias; resumir logs extensos e realizar pesquisa factual simples.
+Nao e o padrao para arquitetura, concorrencia, migrations, seguranca,
+implementacao critica, review final ou decisoes dificeis.
+
+Sonnet 5 e o modelo padrao para implementacao, correcao de bugs, testes,
+Git/GitHub, refatoracao, documentacao, QA, investigacao normal, resolucao de
+conflitos, analise de codigo, deploy ou preflight bem especificado e tarefas
+tecnicas comuns.
+
+Opus 5.5 deve ser escalado quando houver ganho claro de raciocinio, como em
+arquitetura complexa, investigacao forense, concorrencia dificil,
+integridade de dados, migrations criticas, seguranca, incidentes, decisoes
+metodologicas, conflito arquitetural, ambiguidade relevante encontrada pelo
+modelo padrao, segunda analise independente ou review final de codigo
+critico.
+
+Nao use Opus como padrao para busca, edicao mecanica, teste simples,
+documentacao normal, refactor localizado ou tarefa administrativa. Nao
+comece pelo modelo critico apenas "para garantir".
+
+Quando o runtime permitir controlar esforco:
+
+- Haiku: baixo ou medio normalmente;
+- Sonnet: medio por padrao; alto para implementacao complexa ou operacao
+  critica;
+- Opus: alto somente quando a tarefa justificar;
+- evite esforco maximo para tarefas triviais.
+
+Fallback:
+
+- Haiku indisponivel: use Sonnet;
+- Opus indisponivel: use Sonnet com esforco alto e review adicional quando
+  necessario;
+- Sonnet indisponivel: use o melhor modelo de execucao disponivel.
+
+O workflow nao deve bloquear somente porque um modelo especifico nao esta
+disponivel. Preserve o papel necessario e registre a adaptacao quando ela
+for relevante para risco, custo ou independencia do review.
+
+### Delegacao e subagentes
+
+> Delegue quando a delegacao trouxer beneficio mensuravel.
+
+Execute diretamente quando a tarefa for pequena, localizada, bem
+especificada, continuacao direta, exigir poucos arquivos ou custar menos do
+que reconstruir contexto em outro agente.
+
+Delegue quando:
+
+- a investigacao for ampla;
+- muitos arquivos, commits, Pull Requests ou Issues precisarem ser mapeados;
+- pesquisa puder poluir o contexto principal;
+- houver tarefas realmente independentes;
+- paralelismo trouxer ganho real;
+- review independente for necessario;
+- preservar o contexto principal trouxer vantagem.
+
+Delegacao nao e obrigatoria. Nao crie subagente apenas porque a ferramenta
+permite.
+
+Contrato de subagente:
+
+> Um subagente = uma tarefa delimitada.
+
+Cada subagente deve receber objetivo especifico, escopo explicito,
+entregavel verificavel e limite de atuacao. Evite dois agentes pesquisando a
+mesma coisa, pedidos como "analise o projeto inteiro" e envio de contexto
+completo sem necessidade.
+
+Paralelize somente tarefas independentes. Se B depende de A, execute
+`A -> B`, nao `A || B`. Modele as dependencias corretas antes de aumentar a
+quantidade de agentes.
+
+O relatorio do subagente deve ser compacto e conter, conforme aplicavel:
+
+- conclusao;
+- evidencias;
+- arquivos e linhas relevantes;
+- commits ou SHAs;
+- testes e comandos;
+- riscos e incertezas;
+- recomendacao, quando solicitada.
+
+Nao retorne arquivo ou log inteiro sem necessidade, contexto irrelevante ou
+repeticao da descricao da tarefa.
+
+### Read-report-first
+
+> Leia primeiro o relatorio. Leia diretamente somente o que precisa ser
+> confirmado.
+
+O agente principal nao deve reler automaticamente toda a investigacao do
+subagente. Leia a fonte diretamente quando o arquivo sera modificado, o
+codigo for critico, houver ambiguidade ou conflito, a decisao for de alto
+risco, uma afirmacao importante precisar de validacao ou o review exigir
+independencia real.
+
+Decisao critica nunca deve depender exclusivamente do resumo de um
+subagente.
+
+### Delta-first review
+
+Quando um candidato anterior recebeu review completo e o novo candidato
+contem apenas um delta pequeno, comece por `git diff A..B` e revise
+prioritariamente o que mudou. Reexecute os gates potencialmente invalidados,
+os gates criticos e os que dependem do trecho alterado.
+
+Nao reconstrua automaticamente toda a auditoria. Amplie a revisao quando o
+delta puder invalidar uma premissa anterior ou quando a criticidade exigir.
+
+### Fatos ja comprovados
+
+> Nao reinvestigue fatos ja comprovados nesta execucao ou fase, exceto quando
+> o novo delta puder invalida-los.
+
+Gate automatizado barato pode ser reexecutado. Nao repita investigacao cara
+sem causa; registre a evidencia anterior e a razao de qualquer nova
+verificacao.
+
+### Contexto incremental
+
+Prefira carregar:
+
+- base SHA e candidate SHA;
+- `git diff`, hashes e resultados `PASS`/`FAIL`;
+- linhas e nomes de arquivos especificos;
+- Issues, Pull Requests e commits relevantes;
+- decisoes e fatos ainda validos.
+
+Evite recarregar historico inteiro, arquivos completos, logs gigantes,
+explicacoes ja registradas e decisoes que nao mudaram.
+
+Para arquivos, prefira `busca -> trecho -> arquivo completo somente quando
+necessario`. Antes de editar, leia o contexto necessario da regiao e as
+invariantes relacionadas.
+
+Para logs extensos, extraia exit code, `PASS`/`FAIL`, warnings relevantes,
+stack trace necessario, primeira causa e metricas importantes. Em caso de
+falha, expanda apenas o trecho necessario.
+
+Use Git como contexto compacto quando aplicavel:
+
+- `git diff`;
+- `git show`;
+- `git log --oneline`;
+- `git range-diff`;
+- `git blame` quando necessario;
+- `git merge-base`.
+
+Trate SHAs como referencias compactas de contexto, sem confundir referencia
+com validacao do conteudo critico.
+
+### Implementacao e review
+
+Em ambientes que suportem modelos distintos, a preferencia conceitual e:
+
+```text
+modelo de execucao padrao implementa
+-> modelo critico revisa quando a criticidade justificar
+```
+
+Evite que o mesmo agente ou modelo seja a unica revisao independente do
+proprio trabalho critico. Tarefas comuns nao exigem escalonamento artificial.
+
+### Overrides de projeto
+
+O mecanismo e:
+
+```text
+GLOBAL DEFAULT
++ PROJECT OVERRIDE EXPLICITO
+```
+
+Overrides locais legitimos continuam permitidos quando forem mais
+restritivos ou necessarios ao contexto. Eficiencia de contexto, modelo ou
+custo nao pode reduzir silenciosamente seguranca, validacao critica, gate
+obrigatorio ou requisito de qualidade.
+
+Se uma excecao precisar reduzir uma garantia global, registre e justifique a
+decisao conforme `docs/quality.md`, incluindo risco, mitigacao e proximo
+passo. Nao criar schema complexo de overrides sem necessidade.
 
 ## YAGNI e Ponytail
 

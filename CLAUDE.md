@@ -14,13 +14,23 @@ Este repositorio e o Abiliio Dev OS, a fonte central de governanca de desenvolvi
 
 ## Modo de trabalho
 
-- Use `docs/ai-agents.md` como referencia canonica para AI Workflow.
+- Use `docs/ai-agents.md` como referencia canonica para AI Workflow,
+  roteamento de modelos, delegacao e eficiencia de contexto.
 - Priorize simplicidade, clareza e evidencia.
 - Evite overengineering e abstracoes prematuras.
 - Antes de sugerir ferramenta, identifique o problema real.
 - Separe planejamento, implementacao, QA, review e release.
 - Documente decisoes relevantes em ADR quando houver impacto arquitetural.
-- Respeite regras especificas do projeto quando elas forem mais restritivas que o Dev OS.
+- Respeite regras especificas do projeto quando elas forem mais restritivas
+  ou necessarias ao contexto. Excecoes que reduzam garantias globais devem
+  ser registradas e justificadas.
+
+## Roteamento Claude
+
+Use o mapeamento Claude definido exclusivamente em `docs/ai-agents.md`
+(secao Eficiencia de modelos, agentes e contexto). Nao replique a matriz
+de modelos neste arquivo. Se um modelo nao estiver disponivel, aplique o
+fallback canonico sem bloquear o workflow.
 
 ## Papel preferencial do Claude
 
